@@ -68,8 +68,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <img className="App-logo" src="http://pledgie.com/assets/campaigns/23315/medium/database-logo.png?1390316899" alt="BOOM HEADSHOT" />
 
-        <h1>databasIN</h1>
+        <h1 className="databasIN">databasIN</h1>
 
         <input onChange={this.onInputFileChange.bind(this)} id="csv-input" type="file"></input>
         <button hidden={this.state.buttonInvisible} onClick={this.processCSV.bind(this)}>Upload</button>
