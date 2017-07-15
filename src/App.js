@@ -41,13 +41,10 @@ class App extends Component {
       alert("No file")
       return;
     }
-
     Papa.parse(fileInput.files[0], {
-
       error: (err, file, inputElem, reason) => {
         alert(reason)
       },
-
       complete: (results) => {
         fileInput.value = "";
         this.setState({
@@ -67,22 +64,21 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
         <img className="App-logo" src="http://pledgie.com/assets/campaigns/23315/medium/database-logo.png?1390316899" alt="BOOM HEADSHOT" />
 
+        <div className="App">
         <h1 className="databasIN">databasIN</h1>
 
         <input onChange={this.onInputFileChange.bind(this)} id="csv-input" type="file"></input>
         <button hidden={this.state.buttonInvisible} onClick={this.processCSV.bind(this)}>Upload</button>
 
         <div>
-          {this
-            .state
-            .accountList
-            .map(function (account) {
+          {this.state.accountList.map(function (account) {
               return <div>Account: {account[0]}  SSN: {account[1]}</div>
             })}
 
+        </div>
         </div>
 
       </div>

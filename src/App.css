@@ -5,6 +5,9 @@
 .App-logo {
   animation: App-logo-spin infinite 10s linear;
   height: 80px;
+  text-align: left;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 .App-header {
