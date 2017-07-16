@@ -1,6 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
     let Exception = sequelize.define('exception', {
-        account_number: {
+        accountNumber: {
+            field: 'account_number',
             type: DataTypes.STRING
         },
         ssn: {
@@ -12,16 +13,26 @@ module.exports = (sequelize, DataTypes) => {
         employee: {
             type: DataTypes.STRING
         },
-        account_open_date: {
+        accountOpenDate: {
+            field: 'account_open_date',
             type: DataTypes.DATE
         },
-        created_on: {
+        createdAt: {
+            field: 'created_at',
             type: DataTypes.DATE
         },
-        reviewed_on: {
+        updatedAt: {
+            field: 'updated_at',
+            type: DataTypes.DATE
+        },
+        reviewedOn: {
+            field: 'reviewed_on',
             type: DataTypes.DATE
         },
         resolution: {
+            type: DataTypes.STRING
+        },
+        reason: {
             type: DataTypes.STRING
         }
     });
