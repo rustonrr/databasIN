@@ -7,38 +7,41 @@ module.exports = {
         })
     },
     create: (req, res, next) => {
+        var accountsCreated = [];
+        var exceptionsCreated = [];
         for(var i in req.body) {
             Models.account.findOrCreate(
                 {
-                where: { accountNumber: req.body[i].account_number }, 
-                defaults: {
-                    ssn: req.body[i].ssn,
-                    branch: req.body[i].branch,
-                    employee: req.body[i].employee,
-                    accountOpenDate: req.body[i].account_open_date
-                }
+                    where: { accountNumber: req.body[i].account_number }, 
+                    defaults: {
+                        ssn: req.body[i].ssn,
+                        branch: req.body[i].branch,
+                        employee: req.body[i].employee,
+                        accountOpenDate: req.body[i].account_open_date
+                    }
                 }
             ).spread( (account, created) => {
-                console.log(i);
+                
                 if(created) {
-                    console.log(created)
+                    accountsCreated.push(account);
                 } else {
                     Models.exception.create(
                         {
                             reason: "DUPLICATE",
-                            accountNumber: req.body[i].account_number,
-                            ssn: req.body[i].ssn,
-                            branch: req.body[i].branch,
-                            employee: req.body[i].employee,
-                            accountOpenDate: req.body[i].account_open_date
+                            accountNumber: account.accountNumber,
+                            ssn: account.ssn,
+                            branch: account.branch,
+                            employee: account.employee,
+                            accountOpenDate: account.accountOpenDate
                         }
                     ).then( (exception) => {
-                        
+                        exceptionsCreated.push(exception);
                     } )
                 }
             } )
-            console.log(req.body[i].account_number);
         }
-        res.status(200).send("ok");
+        res.status(200).send(
+            {accountsCreated: accountsCreated, exceptionsCreated: exceptionsCreated}
+        );
     }
 }
