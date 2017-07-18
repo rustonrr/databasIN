@@ -10,8 +10,9 @@ class Landing extends Component {
 
     render() {
         return (
-            <div className="hello-world">
-                <p>Hello World Landing</p>            
+            <div className="Landing-hello">
+                <h1>Landing Page Test</h1>
+                <NavLink to={"/App"}> Test</NavLink>
             </div>
         );
     }

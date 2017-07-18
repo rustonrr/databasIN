@@ -74,7 +74,9 @@ class App extends Component {
           <input className="Input-spreadsheet" onChange={this.onInputFileChange.bind(this)} id="csv-input" type="file"></input>
           <button className="Input-spreadsheet" hidden={this.state.buttonInvisible} onClick={this.processCSV.bind(this)}>Upload</button>
         </div>
-        <NavLink to={"/landing"}> Test</NavLink>
+
+        <NavLink to={"/"}> Test</NavLink>
+        
         <div className="Account-list">
           {this.state.accountList.map(function (account) {
             return <div>Account: {account[0]}  SSN: {account[1]} Branch: {account[2]} Employee: {account[3]} Open Date: {account[4]}</div>

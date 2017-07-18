@@ -11,8 +11,8 @@ ReactDOM.render(
     <Provider>
         <Router>
             <Switch>
-                <Route exact path="/" component={App} /> 
-                <Route path="/landing" component={Landing} />
+                <Route exact path="/" component={Landing} /> 
+                <Route path="/App" component={App} />
                 {/*eventually make this login-landingpage-app*/}
             </Switch>
         </Router>
