@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Papa from "papaparse"
 import './App.css';
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 class App extends Component {
   constructor() {
@@ -36,6 +37,13 @@ class App extends Component {
     //   .bind(this);
   }
 
+  loadAccounts() {
+    axios.get(``).then(response => response.data).then(
+      (result) => {
+        console.log(result);
+    })
+  }
+
   processCSV() {
     var fileInput = document.getElementById("csv-input")
     if(!fileInput.value){
@@ -64,10 +72,20 @@ class App extends Component {
   render() {
     return (
       <div>
-
-
-
         <img className="App-logo" src="http://pledgie.com/assets/campaigns/23315/medium/database-logo.png?1390316899" alt="BOOM HEADSHOT" />
+
+
+
+        <button onClick={this.loadAccounts}>Test Accounts</button>
+        {this.state.accountList.map(function(account, index){
+        return (
+          <div>
+          { account.name }
+          </div>
+        )
+      })}
+
+
 
         <div className="App">
           <h1 className="databasIN">databasIN</h1>
@@ -76,7 +94,7 @@ class App extends Component {
         </div>
 
         <NavLink to={"/"}> Test</NavLink>
-        
+
         <div className="Account-list">
           {this.state.accountList.map(function (account) {
             return <div>Account: {account[0]}  SSN: {account[1]} Branch: {account[2]} Employee: {account[3]} Open Date: {account[4]}</div>
