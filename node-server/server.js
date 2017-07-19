@@ -40,7 +40,7 @@ passport.use(new Auth0Strategy({
 
 app.get('/auth', passport.authenticate('auth0'));
 
-app.get('/auth/callback', passport.authenticate('auth0', {successRedirect: '/me', failureRedirect: '/login'}));
+app.get('/auth/callback', passport.authenticate('auth0', {successRedirect: '/', failureRedirect: '/login'}));
 
 passport.serializeUser(function(user,done) {
     done(null, user);
@@ -50,7 +50,7 @@ passport.deserializeUser(function(obj, done) {
     done(null, obj);
 });
 
-app.get('/me', function(req, res){
+app.get('/', function(req, res){
     res.send(req.user);
 });
 
