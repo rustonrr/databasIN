@@ -65,7 +65,7 @@ class App extends Component {
           })}
         </div>
 
-
+        <NavLink to={"/"}>Back To Home</NavLink>
 
       </div>
     );

@@ -1,0 +1,70 @@
+IDEA AND USERS
+What problem(s) does your app solve? 
+- Back office banking tool that will eliminate several tasks associated with reviewing new account openings
+	- Checking for duplicates: does the account already exist in the database
+	- Does the account number contain invalid characters(non-integers)
+	- Is the length of the provided account number within requirements (4-10 characters)
+How does it solve those problems? 
+- User will upload a spreadsheet with account numbers from new account opening, app will test each account number
+	- Upon uploading CSV spreadsheet, app will test each account number on list against existing account numbers in database
+	- App will have at least two tables
+		- Accounts: Passed initial tests, ready for in depth employee review
+		- Exceptions: Flagged, failed 1+ tests (duplicate, invalid format, etc)
+Who is your target user? 
+- Back office bank employees reviewing new account openings
+How much experience do they have with technology?
+- Will be experienced with banking programs, numbers, spreadsheets, databases
+
+FEATURE
+Write use cases for your app.
+- As a user, I can upload a CSV spreadsheet with following info: account number, social security number, branch number, employee name(that opened the account), account opening date. 
+- The database will track account numbers in three stages: Exception(error), Pending review, Approved
+- If the program automatically picks up an error when the spreadsheet is uploaded(duplicate, etc), or if the user detects a reason to write an exception for the account, a row will be created in a separate database titled “Exceptions”, where user will have the ability to notify the banker that opened the account.
+- If the account is approved, account will be labeled “ready for export” with option to notify banker that account is approved.
+
+- After MVP: 
+- Have the ability to export all “Approved” or “Exception” accounts into another spreadsheet
+- Track which accounts were completed by which logged in back office user
+
+-If Time:
+- Mobile responsive (not necessary)
+
+
+VIEW
+What views do you need to create to meet each feature in your app? 
+How will the user get to each view? 
+Revisit this regularly. Simplify each time. Focus on the user. 
+Make a connection to the controller behind the view. 
+Draw each view and map out how the user will get to each of them.
+
+CONTROLLERS
+Create a controller for each wireframe you made. 
+Make a connection to each endpoint it needs to use to get its data.
+
+ENDPOINTS
+List the url, REST method, and a sample of the data being sent or received for every endpoint you need. 
+Make a connection to the parts of the schema you need to access from each endpoint to return or save the data needed.
+
+SCHEMA
+Create your schema here including your data types.
+
+TRACKER
+Views and Routes:
+
+Controllers and services with staged data in service:
+
+Test front end:
+
+Create End points:
+
+Move staged data from service to server:
+
+Test endpoints with postman:
+
+Test front end with server :
+
+Replace staged data with queries :
+
+Test with Postman:
+
+Test end to end Get site hosted:

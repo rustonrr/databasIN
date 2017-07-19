@@ -31,7 +31,7 @@ class Exceptions extends Component {
                     return <div>Account: {exception.accountNumber}  SSN: {exception.ssn} Branch: {exception.branch} Employee: {exception.employee} Open Date: {exception.accountOpenDate}</div>
                     })}
                 </div>
-
+                <NavLink to={"/"}>Back To Home</NavLink>
             </div>
         );
     }
