@@ -1,6 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+
 const accounts_controller = require("./controllers/accounts_controller.js");
+const exceptions_controller = require("./controllers/exceptions_controller.js");
+
 const Sequelize = require("sequelize");
 
 const session = require('express-session');
@@ -58,6 +61,8 @@ app.use(bodyParser.json());
 
 app.get("/accounts", accounts_controller.index);
 app.post("/accounts", accounts_controller.create);
+
+app.get("/exceptions", exceptions_controller.index);
 
 
 
