@@ -14,7 +14,7 @@ class Exceptions extends Component {
     componentDidMount() {
         axios.get("http://localhost:8001/exceptions").then(response => response.data).then(
         (result) => {
-            // console.log(result);
+            console.log(result);
             this.setState({
             exceptionList: result
             })
@@ -28,7 +28,13 @@ class Exceptions extends Component {
 
                 <div>
                     {this.state.exceptionList.map(function (exception) {
-                    return <div>Account: {exception.accountNumber}  SSN: {exception.ssn} Branch: {exception.branch} Employee: {exception.employee} Open Date: {exception.accountOpenDate}</div>
+                    return <div>Account: {exception.accountNumber}
+                          SSN: {exception.ssn}
+                           Branch: {exception.branch}
+                            Employee: {exception.employee}
+                             Open Date: {exception.accountOpenDate}
+                              - <button className="Notify-button"> Test</button></div>
+                        
                     })}
                 </div>
                 <NavLink to={"/"}>Back To Home</NavLink>

@@ -41,6 +41,9 @@ passport.use(new Auth0Strategy({
 app.get('/auth', passport.authenticate('auth0'));
 
 app.get('/auth/callback', passport.authenticate('auth0', {successRedirect: '/', failureRedirect: '/login'}));
+//  check if logged in
+// log out (kill session)
+
 
 passport.serializeUser(function(user,done) {
     done(null, user);

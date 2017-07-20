@@ -32,6 +32,14 @@ Write use cases for your app.
 
 VIEW
 What views do you need to create to meet each feature in your app? 
+
+- Login page with title
+- Welcome page with buttons to either
+- Review Accounts: list of accounts pending review, with a drop down selection to take action 
+	- Approved (ready for export)
+	- Exception (send to exception table)
+- Review Exceptions: list of exceptions with reasons, button to auto generate email to bank employee
+
 How will the user get to each view? 
 Revisit this regularly. Simplify each time. Focus on the user. 
 Make a connection to the controller behind the view. 

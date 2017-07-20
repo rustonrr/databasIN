@@ -61,7 +61,17 @@ class App extends Component {
 
         <div className="Account-list">
           {this.state.accountList.map(function (account) {
-            return <div>Account: {account.accountNumber}  SSN: {account.ssn} Branch: {account.branch} Employee: {account.employee} Open Date: {account.accountOpenDate}</div>
+            return <div>Account: {account.accountNumber}
+                SSN: {account.ssn}
+                 Branch: {account.branch}
+                  Employee: {account.employee}
+                   Open Date: {account.accountOpenDate}
+                    - <select>
+                        <option value="test1">Test1</option>
+                        <option value="test2">Test2</option>
+                        <option value="test3">Test3</option>
+                      </select>
+                   </div>
           })}
         </div>
 
